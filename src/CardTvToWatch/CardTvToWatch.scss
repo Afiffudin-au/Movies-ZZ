@@ -1,0 +1,36 @@
+.card-container-tv-to-watch{
+  .card-container-items-tv-to-watch{
+    padding-top: 30px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    will-change: transform;
+    position: relative;
+    &.active {
+      cursor: grabbing;
+      cursor: -webkit-grabbing;
+      transform: scale(1);
+    }
+  }
+}
+@media(min-width:321px){
+  .card-container-tv-to-watch{
+    min-height: 400px;
+  }
+  .card-container-items-tv-to-watch{
+    height: 350px;
+  }
+}
+@media(max-width:321px){
+  .card-container-tv-to-watch{
+    height: 250px;
+  }
+  .card-container-items-tv-to-watch{
+    height: 250px;
+  }
+}

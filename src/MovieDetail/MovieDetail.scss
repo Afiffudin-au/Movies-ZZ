@@ -1,0 +1,36 @@
+.movieDetail {
+  width: 100%;
+  background-position: right -200px top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  .movieDetail__customBg{
+    background-image: linear-gradient(to right, rgba(12.94%, 14.90%, 22.75%, 1.00) 150px, rgba(20.39%, 22.35%, 29.02%, 0.84) 100%);
+  }
+  .movieDetail__contentText{
+    h1{
+      font-weight: 800;
+      font-size: 25px;
+      color: white;
+      margin-bottom: 10px;
+    }
+    p{
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    color: white;   
+  }
+  strong{
+    font-style: italic;
+    margin-bottom: 10px;
+    color: rgb(223, 223, 223);
+    font-weight: 500;
+    font-size: 18px;
+  }
+  }
+}
+@media(max-width : 700px){
+  .movieDetail__content{
+   flex-direction: column;
+  }
+}

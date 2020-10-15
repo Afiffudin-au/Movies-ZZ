@@ -1,0 +1,23 @@
+.card-container-item-tv-to-watch  {
+  max-width: 150px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade 1s cubic-bezier(0.07, 1.2, 0.5, 0.34);
+  .card-container-item-tv-content-to-watch{
+    max-width: 150px;
+    .star-rate{
+      position: absolute;
+      bottom: 51px;
+      right: 4px;
+    }
+  }
+}
+@media(max-width:320px){
+  .card-container-item-tv-to-watch   {
+    max-width: 100px;
+    .card-container-item-tv-content-to-watch{
+      max-width: 100px;
+    }
+  }
+}

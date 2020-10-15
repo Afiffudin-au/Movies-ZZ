@@ -1,0 +1,10 @@
+.MuiPaper-root{
+  top: 50px !important;
+  padding: 0 !important;
+  .MuiButtonBase-root{
+    font-size: 14px;
+    &:hover{
+      background-color: gainsboro;
+    }
+  }
+}

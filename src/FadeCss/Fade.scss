@@ -1,0 +1,11 @@
+@keyframes fade{
+  0%{
+    transform: scale3d(-1.4, 0.4, 0.7) translateX(120px);
+    opacity: 0;
+  }
+  100%{
+
+    transform: scale(0.98) translateX(0);
+      opacity: 1;
+  }
+}

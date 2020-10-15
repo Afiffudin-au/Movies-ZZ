@@ -1,0 +1,12 @@
+.MuiButtonBase-root.MuiBottomNavigationAction-root{
+  border: none;
+  outline: 0;
+  &.Mui-selected{
+    span{
+      color: #1e88e5;
+    }
+  }
+}
+.MuiSvgIcon-root{
+  transition: fill 0ms cubic-bezier(0, 1.28, 1, -0.18) 0ms !important;
+}

@@ -25,12 +25,12 @@ function CardItemTvToWatch({URL,id,releaseDate,originalTitle,posterPath,voteAver
         <img className="rounded-lg w-full object-fill" src={posterPath} alt=""/>
         </LazyLoad>
         <div className="p-2">
-          <h6 className="font-bold text-lg text-black antialiased overflow-hidden">{originalTitle?.slice(-originalTitle.length,15)}</h6>
+          <h1 className="font-bold text-lg text-black antialiased overflow-hidden">{originalTitle?.slice(-originalTitle.length,15)}</h1>
           <p className="font-normal text-sm text-gray-900 antialiased">{releaseDate}</p>
         </div>
         <div className="star-rate bg-blue-600 rounded-full p-1 flex items-center">
           <StarRateIcon style={{color : amber[600]}} />
-          <span className="text-gray-300">{voteAverage}</span>
+          <span className="text-white">{voteAverage}</span>
         </div>
         <span className="tooltiptext">Detail Movie</span>
       </div>

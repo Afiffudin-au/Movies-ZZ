@@ -26,7 +26,7 @@ function CardAllMovie({URL,mediaType,id,originalTitle,voteAverage,posterPath}) {
         <small className="cardAllMovies__title overflow-hidden">{originalTitle}</small>
         <div className="cardAllMovies__starRate flex items-center shadow-2xl">
           <StarRateIcon style={{color : amber[800],fontSize : '25px'}} />
-          <span className="text-gray-200 font-extrabold subpixel-antialiased text-lg">{voteAverage}</span>
+          <span className="text-white font-extrabold text-lg">{voteAverage}</span>
         </div>
       </div>
       <span className="tooltiptext">Detail Movie</span>

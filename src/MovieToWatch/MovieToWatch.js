@@ -19,7 +19,7 @@ function MovieToWatch() {
   return (
     <>
       <div className="flex items-center ml-5 flex-col sm:flex-row mt-5">
-        <h5 className="p-2 mr-3 font-semibold text-2xl text-gray-900">Movie To Watch</h5>
+        <h1 className="p-2 mr-3 font-semibold text-2xl text-gray-900">Movie To Watch</h1>
         <BottomNavigation
         value={value}
         onChange={(event, newValue) => {

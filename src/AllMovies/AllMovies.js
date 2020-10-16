@@ -31,7 +31,7 @@ function AllMovies() {
     {
       loading && <LoadingBar/>
     }
-    <h6 className="text-lg p-2 font-semibold">All Movies to watch</h6>
+    <h1 className="text-lg p-2 font-semibold">All Movies to watch</h1>
     <div className="grid p-2 grid-cols-2 xs:grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-10 xl3:grid-cols-12 gap-3">
       <MemoizedChildComponent URL={allMovies.url} allMovies={allMovies} posterUrl={posterUrl}/>
     </div>
@@ -39,20 +39,20 @@ function AllMovies() {
       {
         showMore > 1 ? (
           <>
-            <IconButton onClick={handleClickDec} style={{outline : '0',display : 'flex', alignItems : 'center'}}>
+            <IconButton aria-label="Button" onClick={handleClickDec} style={{outline : '0',display : 'flex', alignItems : 'center'}}>
               <ArrowBackIcon/>
             </IconButton>
-            <IconButton onClick={handleClickIn} style={{outline : '0',display : 'flex', alignItems : 'center'}}>
+            <IconButton aria-label="Button" onClick={handleClickIn} style={{outline : '0',display : 'flex', alignItems : 'center'}}>
               <ArrowForwardIcon/>
             </IconButton>
           </>
         ):(
-        <IconButton onClick={handleClickIn} style={{outline : '0',display : 'flex', alignItems : 'center'}}>
+        <IconButton aria-label="Button" onClick={handleClickIn} style={{outline : '0',display : 'flex', alignItems : 'center'}}>
           <ArrowForwardIcon/>
         </IconButton>
         )
       }
-      <span className="bg-blue-500 px-2 py-2 rounded shadow-xl subpixel-antialiased text-gray-200"> Page {showMore} / {allMovies.total_Pages}</span>
+      <span className="bg-blue-500 px-2 py-2 rounded shadow-xl text-gray-200"> Page {showMore} / {allMovies.total_Pages}</span>
     </div>
     </div>
   )

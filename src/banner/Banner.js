@@ -24,7 +24,7 @@ function Banner() {
 
       <div className="bg-gray-200 rounded-full shadow-2xl w-full">
         <div className="flex bg-gray-200rounded-full w-full">
-          <input value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)} className="w-full p-3 rounded-full outline-none border-none bg-gray-200" type="text" placeholder="Search for movies,Tv Shows and person"/>
+          <input aria-label="input search" value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)} className="w-full p-3 rounded-full outline-none border-none bg-gray-200" type="text" placeholder="Search for movies,Tv Shows and person"/>
           <button onClick={handleClick} className="bg-red-700 rounded-full shadow-xl w-4/12 sm:w-3/12 outline-none border-none banner__button-search">Search</button>
         </div>
       </div>

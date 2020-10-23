@@ -4,9 +4,10 @@ import {Link} from 'react-router-dom'
 function MenuItems({name,link}) {
   return (
     <>
-      <Link to={link}>
+      <MenuItem>{name}</MenuItem>
+      {/* <Link to={link}>
         <MenuItem>{name}</MenuItem>
-      </Link>
+      </Link> */}
     </>
   )
 }

@@ -1,7 +1,7 @@
 import { useStateValue } from "../stateProvider/StateProvider"
 export const useCounterAddMovieTheme = ()=>{
   const [{},dispatch] = useStateValue()
-  const handleAdd = (movieTheme,url)=>{
+  const addMovieTheme = (movieTheme,url)=>{
   dispatch({
       type : 'SET_BY_MOVIE_THEME',
       movieThemes : {
@@ -10,16 +10,13 @@ export const useCounterAddMovieTheme = ()=>{
       }
     })
   }
-  const addMovieTheme = (movieTheme,url)=>{
-    handleAdd(movieTheme,url)
-  }
   return[
     addMovieTheme
   ]
 }
 export const useCounterAddMovieToWatch = ()=>{
   const [{},dispatch] = useStateValue()
-  const handleAdd = (movieToWatch,url)=>{
+  const addmovieToWatch = (movieToWatch,url)=>{
   dispatch({
       type : 'SET_BY_MOVIE_TO_WATCH',
       movieToWatch : {
@@ -28,16 +25,13 @@ export const useCounterAddMovieToWatch = ()=>{
       }
     })
   }
-  const addmovieToWatch = (movieToWatch,url)=>{
-    handleAdd(movieToWatch,url)
-  }
   return[
     addmovieToWatch
   ]
 }
 export const useCounterAddTvToWatch = ()=>{
   const [{},dispatch] = useStateValue()
-  const handleAdd = (tvToWatch,url)=>{
+  const addTvToWatch = (tvToWatch,url)=>{
     dispatch({
       type : 'SET_TV_TO_WATCH',
       tvToWatch : {
@@ -46,14 +40,11 @@ export const useCounterAddTvToWatch = ()=>{
       }
     })
   }
-  const addTvToWatch = (tvToWatch,url)=>{
-    handleAdd(tvToWatch,url)
-  }
   return [addTvToWatch]
 }
 export const useCounterAddAllMovies = ()=>{
   const [{},dispatch] = useStateValue()
-  const handleAdd = (allMovies,total_Pages,url)=>{
+  const addAllMovies = (allMovies,total_Pages,url)=>{
     dispatch({
       type : 'SET_ALL_MOVIES',
       allMovies : {
@@ -63,27 +54,21 @@ export const useCounterAddAllMovies = ()=>{
       }
     })
   }
-  const addAllMovies = (allMovies,total_Pages,url)=>{
-    handleAdd(allMovies,total_Pages,url)
-  }
   return [addAllMovies]
 }
 export const useCounterAddMovieDetail = ()=>{
   const [{},dispatch] = useStateValue()
-  const handleAdd = (movieDetail)=>{
+  const addMovieDetail = (movieDetail)=>{
     dispatch({
       type : 'SET_MOVIE_DETAIL',
       movieDetail : movieDetail
     })
   }
-  const addMovieDetail = (movieDetail)=>{
-    handleAdd(movieDetail)  
-  }
   return [addMovieDetail]
 }
 export const useCounterAddMultiResultSearch = ()=>{
   const [{},dispatch] = useStateValue()
-  const handleAdd = (result,url) =>{
+  const AddMultiResultSearch = (result,url) =>{
     dispatch({
       type : 'SET_MULTI_RESULT_SEARCH',
       resultSearch : {
@@ -91,9 +76,6 @@ export const useCounterAddMultiResultSearch = ()=>{
         allToTalMultiSearch : result
       }
     })
-  }
-  const AddMultiResultSearch = (result,url)=>{
-    handleAdd(result,url)
   }
   return[AddMultiResultSearch]
 }

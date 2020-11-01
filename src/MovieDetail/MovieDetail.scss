@@ -29,6 +29,11 @@
   }
   }
 }
+@media(min-width : 700px){
+  .movieDetail__customBg{
+    height: 100vh !important;
+  }
+}
 @media(max-width : 700px){
   .movieDetail__content{
    flex-direction: column;

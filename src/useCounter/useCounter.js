@@ -68,12 +68,13 @@ export const useCounterAddMovieDetail = ()=>{
 }
 export const useCounterAddMultiResultSearch = ()=>{
   const [{},dispatch] = useStateValue()
-  const AddMultiResultSearch = (result,url) =>{
+  const AddMultiResultSearch = (result,url,loading) =>{
     dispatch({
       type : 'SET_MULTI_RESULT_SEARCH',
       resultSearch : {
         url : url,
-        allToTalMultiSearch : result
+        allToTalMultiSearch : result,
+        loading: loading
       }
     })
   }

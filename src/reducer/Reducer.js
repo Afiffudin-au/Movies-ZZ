@@ -20,7 +20,8 @@ export const initialState = {
 
   resultSearch : {
     url : null,
-    allToTalMultiSearch : []
+    allToTalMultiSearch : [],
+    loading : null
   }
 }
 const reducer = (state,action)=>{
@@ -70,7 +71,8 @@ const reducer = (state,action)=>{
       ...state,
       resultSearch : {
         url : action.resultSearch.url,
-        allToTalMultiSearch : action.resultSearch.allToTalMultiSearch
+        allToTalMultiSearch : action.resultSearch.allToTalMultiSearch,
+        loading : action.resultSearch.loading
       }
     }
     default : 

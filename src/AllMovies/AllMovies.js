@@ -6,7 +6,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import IconButton from '@material-ui/core/IconButton';
 import './AllMovies.scss'
-import LoadingBar from '../LoadingBar/LoadingBar';
+import LinearProgress from '@material-ui/core/LinearProgress';
 function AllMovies() {
   const [showMore,setShowMore] = useState(1)
   const [getAllMovies,loading] = useGetAllMovies()
@@ -29,7 +29,7 @@ function AllMovies() {
     <div className="AllMovies">
     <hr/>
     {
-      loading && <LoadingBar/>
+      loading && <LinearProgress color="secondary"/> 
     }
     <h1 className="text-lg p-2 font-semibold">All Movies to watch</h1>
     <div className="grid p-2 grid-cols-2 xs:grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-10 xl3:grid-cols-12 gap-3">

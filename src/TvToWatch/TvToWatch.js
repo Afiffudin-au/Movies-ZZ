@@ -7,7 +7,7 @@ import {useGetTvTopRated,useGetTvAiringToday} from '../useGetMovie/useGets';
 import TodayIcon from '@material-ui/icons/Today';
 import { useEffect } from 'react';
 import CardTvToWatch from '../CardTvToWatch/CardTvToWatch';
-import LoadingBar from '../LoadingBar/LoadingBar';
+import LinearProgress from '@material-ui/core/LinearProgress';
 function TvToWatch() {
   const [value, setValue] = React.useState(0)
   const classes = useStylesToWatch()
@@ -33,7 +33,7 @@ function TvToWatch() {
       </BottomNavigation>
       </div>
       {
-        loading && <LoadingBar/>
+        loading && <LinearProgress color="secondary"/> 
       }
       <CardTvToWatch/>
     </>

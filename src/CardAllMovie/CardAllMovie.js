@@ -5,6 +5,7 @@ import {amber} from '@material-ui/core/colors';
 import LazyLoad from 'react-lazyload'
 import { useGetMovieDetail } from '../useGetMovie/useGets';
 import { useHistory } from 'react-router-dom';
+import LinearProgress from '@material-ui/core/LinearProgress';
 function CardAllMovie({URL,mediaType,id,originalTitle,voteAverage,posterPath}) {
   const [getMovieDetail] = useGetMovieDetail()
   const history = useHistory()
@@ -17,8 +18,7 @@ function CardAllMovie({URL,mediaType,id,originalTitle,voteAverage,posterPath}) {
         <LazyLoad 
           width={130}
           height={200}
-          debounce={false}
-          // offsetVertical={500}
+          placeholder={<LinearProgress color="secondary"/>}
         >
           <img className="lozad object-fill rounded-t-sm" src={posterPath} alt=""/>
         </LazyLoad>

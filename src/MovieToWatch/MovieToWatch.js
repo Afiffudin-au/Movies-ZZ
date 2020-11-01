@@ -7,7 +7,7 @@ import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import CardMovieToWatch from '../CardMovieToWatch/CardMovieToWatch';
 import { useGetMovieTopRated, useGetMovieUpcoming } from '../useGetMovie/useGets';
 import { useEffect } from 'react';
-import LoadingBar from '../LoadingBar/LoadingBar';
+import LinearProgress from '@material-ui/core/LinearProgress';
 function MovieToWatch() {
   const [value, setValue] = React.useState(0);
   const classes = useStylesToWatch()
@@ -33,7 +33,7 @@ function MovieToWatch() {
       </BottomNavigation>
       </div>
       {
-        loading && <LoadingBar/>
+        loading && <LinearProgress color="secondary"/>
       }
       <CardMovieToWatch/>
     </>

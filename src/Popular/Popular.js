@@ -8,7 +8,7 @@ import './Popular.scss'
 import { useStylesPopular } from '../UseStyles/UseStyles';
 import  Card  from '../Card/Card'
 import { useGetMovies, useGetTvShows, useGetNowPlaying } from '../useGetMovie/useGets';
-import LoadingBar from '../LoadingBar/LoadingBar';
+import LinearProgress from '@material-ui/core/LinearProgress';
 function Popular() {
   const classes = useStylesPopular()
   const [value, setValue] = React.useState(0);
@@ -36,7 +36,7 @@ function Popular() {
       </BottomNavigation>
       </div>
       {
-       loading && <LoadingBar/> 
+      loading && <LinearProgress color="secondary"/> 
       }
       <Card/>
     </> 

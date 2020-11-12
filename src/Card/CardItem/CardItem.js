@@ -1,11 +1,11 @@
 import React from 'react'
 import './CardItem.scss'
 import LazyLoad from 'react-lazyload';
-import { useGetMovieDetail } from '../../useGetMovie/useGets';
+import { useMovieDetail } from '../../useGetMovie/useMovieDetail';
 import { useHistory } from 'react-router-dom';
 import LinearProgress from '@material-ui/core/LinearProgress';
 function CardItem({URL,id,releaseDate,originalTitle,posterPath}) {
-  const [getMovieDetail] = useGetMovieDetail()
+  const {getMovieDetail} = useMovieDetail()
   const history = useHistory()
   const handleClick = (e)=>{
    getMovieDetail(id,URL)

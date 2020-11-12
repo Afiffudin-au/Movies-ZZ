@@ -1,13 +1,18 @@
 import React from 'react'
 import { useStateValue } from '../stateProvider/StateProvider'
 import CardAllMovie from '../CardAllMovie/CardAllMovie'
+import LinearProgress from '@material-ui/core/LinearProgress';
 function ResultMultiSearch() {
   const [{resultSearch}] = useStateValue()
   const posterUrl = 'https://image.tmdb.org/t/p/original'
   const checkMovie = resultSearch.allToTalMultiSearch?.length === 0 && !resultSearch?.loading
   const cannotFindMovie = checkMovie
+  const loading = resultSearch.loading
   return (
     <>
+    {
+      loading && <LinearProgress color="secondary"/>
+    }
     {
       cannotFindMovie && <p className="text-black text-xl uppercase">Sorry We Cannot Find...</p>
     }

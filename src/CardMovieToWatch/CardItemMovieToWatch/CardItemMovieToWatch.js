@@ -3,11 +3,11 @@ import './CardItemMovieToWatch.scss'
 import StarRateIcon from '@material-ui/icons/StarRate';
 import {amber} from '@material-ui/core/colors';
 import LazyLoad from 'react-lazyload'
-import { useGetMovieDetail } from '../../useGetMovie/useGets';
+import { useMovieDetail } from '../../useGetMovie/useMovieDetail';
 import { useHistory } from 'react-router-dom';
 import LinearProgress from '@material-ui/core/LinearProgress';
 function CardItemMovieToWatch({URL,id,releaseDate,originalTitle,posterPath,voteAverage}) {
-  const [getMovieDetail] = useGetMovieDetail()
+  const {getMovieDetail} = useMovieDetail()
   const history = useHistory()
   const handleClick = (e)=>{
     getMovieDetail(id,URL)

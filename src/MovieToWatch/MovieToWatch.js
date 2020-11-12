@@ -5,14 +5,16 @@ import { useStylesToWatch } from '../UseStyles/UseStyles';
 import StarIcon from '@material-ui/icons/Star';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import CardMovieToWatch from '../CardMovieToWatch/CardMovieToWatch';
-import { useGetMovieTopRated, useGetMovieUpcoming } from '../useGetMovie/useGets';
 import { useEffect } from 'react';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import { useStateValue } from '../stateProvider/StateProvider';
+import { useMovieWatch } from '../useGetMovie/useMovieWatch';
 function MovieToWatch() {
   const [value, setValue] = React.useState(0);
   const classes = useStylesToWatch()
-  const [getMovieTopRated,loading] = useGetMovieTopRated()
-  const [getMovieUpcoming] = useGetMovieUpcoming()
+  const {getMovieTopRated,getMovieUpcoming} = useMovieWatch()
+  const [{movieToWatch}]= useStateValue()
+  const loading = movieToWatch.loading
   useEffect(()=>{
     getMovieTopRated()
   },[])

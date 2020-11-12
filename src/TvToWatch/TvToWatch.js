@@ -3,16 +3,18 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import { useStylesToWatch } from '../UseStyles/UseStyles';
 import StarIcon from '@material-ui/icons/Star';
-import {useGetTvTopRated,useGetTvAiringToday} from '../useGetMovie/useGets';
 import TodayIcon from '@material-ui/icons/Today';
 import { useEffect } from 'react';
 import CardTvToWatch from '../CardTvToWatch/CardTvToWatch';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import { useStateValue } from '../stateProvider/StateProvider';
+import { useTvToWatch } from '../useGetMovie/useTvToWatch';
 function TvToWatch() {
   const [value, setValue] = React.useState(0)
+  const [{tvToWatch}] = useStateValue()
   const classes = useStylesToWatch()
-  const [getTvTopRated,loading] = useGetTvTopRated()
-  const [getTvAiringToday] = useGetTvAiringToday()
+  const loading = tvToWatch.loading
+  const {getTvTopRated,getTvAiringToday} = useTvToWatch()
   useEffect(()=>{
     getTvTopRated()
   },[])

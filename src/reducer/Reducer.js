@@ -1,27 +1,34 @@
 export const initialState = {
   movieThemes : {
     url : null,
-    allTotalMovieThemes : []
+    allTotalMovieThemes : [],
+    loading : null
   },
   movieToWatch : {
     url : null,
-    allTotalMovieToWatch : []
+    allTotalMovieToWatch : [],
+    loading : null
   },
   tvToWatch : {
     url : null,
-    allTotalTvToWatch : []
+    allTotalTvToWatch : [],
+    loading : null
+  },
+  preti : {
+    url : null
   },
   allMovies : {
     url : null,
     total_Pages : null,
-    allTotalMovies : []
+    allTotalMovies : [],
+    loading : null
   },
   movieDetails : [],
 
   resultSearch : {
     url : null,
     allToTalMultiSearch : [],
-    loading : null
+    loading : null,
   }
 }
 const reducer = (state,action)=>{
@@ -32,7 +39,8 @@ const reducer = (state,action)=>{
       ...state,
       movieThemes : {
         url : action.movieThemes.url,
-        allTotalMovieThemes : action.movieThemes.allTotalMovieThemes
+        allTotalMovieThemes : action.movieThemes.allTotalMovieThemes,
+        loading : action.movieThemes.loading
       }
     }
 
@@ -41,7 +49,8 @@ const reducer = (state,action)=>{
       ...state,
       movieToWatch : {
         url : action.movieToWatch.url,
-        allTotalMovieToWatch : action.movieToWatch.allTotalMovieToWatch
+        allTotalMovieToWatch : action.movieToWatch.allTotalMovieToWatch,
+        loading : action.movieToWatch.loading
       }
     }
     case 'SET_TV_TO_WATCH':
@@ -49,7 +58,8 @@ const reducer = (state,action)=>{
       ...state,
       tvToWatch : {
         url : action.tvToWatch.url,
-        allTotalTvToWatch : action.tvToWatch.allTotalTvToWatch
+        allTotalTvToWatch : action.tvToWatch.allTotalTvToWatch,
+        loading : action.tvToWatch.loading
       }
     }
     case 'SET_ALL_MOVIES':
@@ -58,7 +68,8 @@ const reducer = (state,action)=>{
       allMovies : {
         url : action.allMovies.url,
         allTotalMovies : action.allMovies.allTotalMovies,
-        total_Pages : action.allMovies.total_Pages
+        total_Pages : action.allMovies.total_Pages,
+        loading : action.allMovies.loading
       }
     }
     case 'SET_MOVIE_DETAIL':

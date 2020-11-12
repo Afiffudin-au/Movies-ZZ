@@ -7,14 +7,16 @@ import TheatersIcon from '@material-ui/icons/Theaters';
 import './Popular.scss'
 import { useStylesPopular } from '../UseStyles/UseStyles';
 import  Card  from '../Card/Card'
-import { useGetMovies, useGetTvShows, useGetNowPlaying } from '../useGetMovie/useGets';
+import {  } from '../useGetMovie/useMovieDetail';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import { useStateValue } from '../stateProvider/StateProvider';
+import { usePopular } from '../useGetMovie/usePopular';
 function Popular() {
   const classes = useStylesPopular()
-  const [value, setValue] = React.useState(0);
-  const [getMovies,loading] = useGetMovies()
-  const [getTvShows] = useGetTvShows()
-  const [getNowPlaying] = useGetNowPlaying()
+  const [value,setValue] = React.useState(0);
+  const {getMovies,getTvShows,getNowPlaying} = usePopular()
+  const [{movieThemes}] = useStateValue()
+  const loading = movieThemes.loading
   useEffect(()=>{
     getMovies()
   },[])

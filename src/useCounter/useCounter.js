@@ -1,12 +1,13 @@
 import { useStateValue } from "../stateProvider/StateProvider"
 export const useCounterAddMovieTheme = ()=>{
   const [{},dispatch] = useStateValue()
-  const addMovieTheme = (movieTheme,url)=>{
+  const addMovieTheme = (movieTheme,url,loading)=>{
   dispatch({
       type : 'SET_BY_MOVIE_THEME',
       movieThemes : {
+        allTotalMovieThemes : movieTheme,
         url : url,
-        allTotalMovieThemes : movieTheme
+        loading : loading
       }
     })
   }
@@ -16,12 +17,13 @@ export const useCounterAddMovieTheme = ()=>{
 }
 export const useCounterAddMovieToWatch = ()=>{
   const [{},dispatch] = useStateValue()
-  const addmovieToWatch = (movieToWatch,url)=>{
+  const addmovieToWatch = (movieToWatch,url,loading)=>{
   dispatch({
       type : 'SET_BY_MOVIE_TO_WATCH',
       movieToWatch : {
+        allTotalMovieToWatch : movieToWatch,
         url : url,
-        allTotalMovieToWatch : movieToWatch
+        loading : loading
       }
     })
   }
@@ -31,12 +33,13 @@ export const useCounterAddMovieToWatch = ()=>{
 }
 export const useCounterAddTvToWatch = ()=>{
   const [{},dispatch] = useStateValue()
-  const addTvToWatch = (tvToWatch,url)=>{
+  const addTvToWatch = (tvToWatch,url,loading)=>{
     dispatch({
       type : 'SET_TV_TO_WATCH',
       tvToWatch : {
+        allTotalTvToWatch : tvToWatch,
         url : url,
-        allTotalTvToWatch : tvToWatch
+        loading : loading
       }
     })
   }
@@ -44,13 +47,14 @@ export const useCounterAddTvToWatch = ()=>{
 }
 export const useCounterAddAllMovies = ()=>{
   const [{},dispatch] = useStateValue()
-  const addAllMovies = (allMovies,total_Pages,url)=>{
+  const addAllMovies = (allMovies,total_Pages,url,loading)=>{
     dispatch({
       type : 'SET_ALL_MOVIES',
       allMovies : {
-        url : url,
         allTotalMovies : allMovies,
-        total_Pages : total_Pages
+        total_Pages : total_Pages,
+        url : url,
+        loading : loading
       }
     })
   }
@@ -72,8 +76,8 @@ export const useCounterAddMultiResultSearch = ()=>{
     dispatch({
       type : 'SET_MULTI_RESULT_SEARCH',
       resultSearch : {
-        url : url,
         allToTalMultiSearch : result,
+        url : url,
         loading: loading
       }
     })

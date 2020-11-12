@@ -1,16 +1,17 @@
 import React, { useEffect ,useState} from 'react'
 import CardAllMovie from '../CardAllMovie/CardAllMovie'
-import { useGetAllMovies } from '../useGetMovie/useGets'
 import { useStateValue } from '../stateProvider/StateProvider'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import IconButton from '@material-ui/core/IconButton';
 import './AllMovies.scss'
 import LinearProgress from '@material-ui/core/LinearProgress';
+import { useAllMovies } from '../useGetMovie/useAllMovies';
 function AllMovies() {
   const [showMore,setShowMore] = useState(1)
-  const [getAllMovies,loading] = useGetAllMovies()
+  const {getAllMovies} = useAllMovies()
   const [{allMovies}] = useStateValue()
+  const loading = allMovies.loading
   const posterUrl = 'https://image.tmdb.org/t/p/original'
   useEffect(()=>{
     getAllMovies(showMore)

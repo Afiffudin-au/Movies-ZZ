@@ -1,17 +1,19 @@
 import React, {useState } from 'react'
 import './Banner.scss'
-import { useGetSearchMulti } from '../useGetMovie/useGets'
 import { useHistory } from 'react-router-dom'
-
+import { useSearchMulti } from '../useGetMovie/useSearchMulti'
 function Banner() {
   const [searchQuery,setSearchQuery]  = useState('')
-  const [getSearchMulti] = useGetSearchMulti()
+  const {getSearchMulti} = useSearchMulti()
   const history = useHistory()
-  const handleClick = ()=>{
-    if(searchQuery !== ''){
-      getSearchMulti(searchQuery)
-      history.push('/result_search')
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    const userText = searchQuery.replace(/^\s+/, '').replace(/\s+$/, '');
+    if(userText === ''){
+      return
     }
+    getSearchMulti(searchQuery)
+    history.push('/result_search')
   }
   return (
     <div className="banner flex items-center z-10">
@@ -24,8 +26,10 @@ function Banner() {
 
       <div className="bg-gray-200 rounded-full shadow-2xl w-full">
         <div className="flex bg-gray-200rounded-full w-full">
-          <input aria-label="input search" value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)} className="w-full p-3 rounded-full outline-none border-none bg-gray-200" type="text" placeholder="Search for movies,Tv Shows and person"/>
-          <button onClick={handleClick} className="bg-red-700 rounded-full shadow-xl w-4/12 sm:w-3/12 outline-none border-none banner__button-search">Search</button>
+          <form className="flex bg-gray-200rounded-full w-full" action="" onSubmit={handleSubmit}>
+            <input aria-label="input search" value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)} className="w-full p-3 rounded-full outline-none border-none bg-gray-200" type="text" placeholder="Search for movies,Tv Shows and person"/>
+            <button onClick={handleSubmit} className="bg-red-700 rounded-full shadow-xl w-4/12 sm:w-3/12 outline-none border-none banner__button-search">Search</button>
+          </form>
         </div>
       </div>
      </div>
